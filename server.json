@@ -1,0 +1,38 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "name": "strategix-visual-mcp",
+  "title": "StrategiX Visual MCP",
+  "description": "Contract-first visual infrastructure for agents that produces deterministic, auditable visual artifacts with fit reports, receipts, provenance, and searchable metadata.",
+  "websiteUrl": "https://aitrailblazer.github.io/strategix-visual-mcp/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aitrailblazer/strategix-visual-mcp"
+  },
+  "license": "MIT",
+  "keywords": [
+    "strategix",
+    "visual-artifacts",
+    "mcp",
+    "agent-tools",
+    "visual-infrastructure",
+    "deterministic-rendering",
+    "provenance",
+    "auditability",
+    "fit-reports",
+    "receipts",
+    "diagrams",
+    "dashboards",
+    "scorecards",
+    "architecture-maps",
+    "html-artifacts",
+    "contract-first"
+  ],
+  "transport": "http",
+  "http": {
+    "url": "https://api.aitrailblazer.net/mcp",
+    "requiresKey": true,
+    "authHeader": "x-api-key"
+  },
+  "toolPrefix": "strategix_",
+  "launchState": "public-discoverable-api-key-gated-beta"
+}

@@ -1,0 +1,30 @@
+# StrategiX Visual MCP
+
+StrategiX Visual MCP is an AITrailblazer MCP product for reproducible visual infrastructure for agents.
+
+Canonical identity:
+
+- Product: StrategiX Visual MCP
+- Publisher: AITrailblazer
+- Endpoint: https://api.aitrailblazer.net/mcp
+- Public page: https://aitrailblazer.github.io/strategix-visual-mcp/
+- Tool prefix: strategix_
+- Launch state: public-discoverable, API-key gated beta
+
+Use this one-line description:
+
+StrategiX Visual MCP turns contracts, reasoning, and source material into deterministic, auditable visual artifacts with fit reports, receipts, provenance, and searchable metadata.
+
+Positioning:
+
+- Not a generic diagram generator.
+- Not a canvas editor.
+- Not a Mermaid clone.
+- Not merely a renderer backend.
+- A contract-first visual infrastructure layer for agent workflows.
+
+Core chain:
+
+contract -> render -> fit report -> receipt -> searchable artifact
+
+Do not claim specific transport modes, rate limits, SLA, or public paid x402 execution until those surfaces are verified.

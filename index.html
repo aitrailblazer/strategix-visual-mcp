@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StrategiX Visual MCP turns contracts, reasoning, and source material into deterministic, auditable visual artifacts with fit reports, receipts, provenance, and searchable metadata.">
+  <title>StrategiX Visual MCP | Reproducible Visual Infrastructure for Agents</title>
+  <meta property="og:title" content="StrategiX Visual MCP">
+  <meta property="og:description" content="Reproducible visual infrastructure for agents. Contract-first visual artifacts with fit reports, receipts, provenance, and searchable metadata.">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+    :root {
+      color-scheme: dark;
+      --bg: #050608;
+      --panel: #10141b;
+      --panel-2: #141018;
+      --ink: #f5f1e8;
+      --muted: #b8c1c8;
+      --line: rgba(112, 226, 255, 0.22);
+      --cyan: #70e2ff;
+      --gold: #f0c76a;
+      --rose: #ff5e89;
+      --violet: #9d7cff;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    a { color: var(--cyan); text-underline-offset: 4px; }
+    h1, h2, h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: 0;
+    }
+
+    .hero {
+      min-height: 96vh;
+      width: 100%;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+      background:
+        radial-gradient(circle at 48% 20%, rgba(112, 226, 255, 0.20), transparent 26rem),
+        radial-gradient(circle at 74% 42%, rgba(157, 124, 255, 0.20), transparent 24rem),
+        linear-gradient(115deg, rgba(240, 199, 106, 0.12), transparent 32%),
+        linear-gradient(180deg, #081018 0%, #050608 74%);
+      border-bottom: 1px solid rgba(112, 226, 255, 0.18);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(112, 226, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(240, 199, 106, 0.032) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, #000, transparent 82%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        transparent,
+        transparent 4px,
+        rgba(112, 226, 255, 0.025) 4px,
+        rgba(112, 226, 255, 0.025) 6px
+      );
+      animation: scan 18s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+    @keyframes scan {
+      from { background-position: 0 0; }
+      to { background-position: 0 900px; }
+    }
+    #particles {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.54;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .hero-inner {
+      width: min(var(--max), 100%);
+      position: relative;
+      z-index: 2;
+      min-width: 0;
+    }
+    .mark {
+      width: 142px;
+      height: 142px;
+      margin: 0 auto 2.5rem;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 42%, rgba(112,226,255,.22), #080b0f 60%);
+      box-shadow:
+        0 0 0 1px rgba(112, 226, 255, 0.52),
+        0 0 54px rgba(112, 226, 255, 0.34),
+        0 0 104px rgba(157, 124, 255, 0.28);
+      animation: pulse 4.5s infinite alternate;
+    }
+    .mark svg {
+      width: 94px;
+      height: 94px;
+    }
+    @keyframes pulse {
+      from { transform: translateY(0); box-shadow: 0 0 0 1px rgba(112,226,255,.42), 0 0 42px rgba(112,226,255,.28), 0 0 82px rgba(157,124,255,.22); }
+      to { transform: translateY(-4px); box-shadow: 0 0 0 1px rgba(240,199,106,.7), 0 0 68px rgba(112,226,255,.42), 0 0 128px rgba(157,124,255,.36); }
+    }
+    .eyebrow {
+      width: fit-content;
+      margin: 0 auto 1.5rem;
+      padding: 0.62rem 1rem;
+      border: 1px solid rgba(112, 226, 255, 0.36);
+      border-radius: 999px;
+      color: #d6f8ff;
+      background: linear-gradient(90deg, rgba(112,226,255,.12), rgba(240,199,106,.12));
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+    h1 {
+      margin: 0 auto 1.35rem;
+      font-size: clamp(3.25rem, 8vw, 6.4rem);
+      line-height: 0.94;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--cyan), var(--gold), var(--rose));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h1 span { display: block; }
+    .tagline {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #edf7f8;
+      font-size: clamp(1.18rem, 2.25vw, 1.74rem);
+      line-height: 1.45;
+    }
+    .tagline span {
+      display: block;
+      margin-top: 0.4rem;
+      color: var(--muted);
+      font-size: 0.82em;
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.15rem;
+      margin: 3.1rem 0 1.35rem;
+    }
+    .btn {
+      display: inline-flex;
+      min-height: 62px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0 2rem;
+      font-size: 1.06rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+    .btn-primary {
+      color: #071015;
+      background: linear-gradient(90deg, var(--cyan), var(--gold) 58%, var(--rose));
+      box-shadow: 0 0 62px rgba(112, 226, 255, 0.34);
+    }
+    .btn-secondary {
+      border: 1px solid rgba(112, 226, 255, 0.38);
+      color: var(--ink);
+      background: rgba(16, 20, 27, 0.74);
+    }
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 76px rgba(112, 226, 255, 0.28);
+    }
+    .meter {
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+    .artifact-visual {
+      width: min(920px, 100%);
+      margin: 3rem auto 0;
+      border: 1px solid rgba(112, 226, 255, 0.26);
+      border-radius: 12px;
+      background:
+        linear-gradient(135deg, rgba(112,226,255,.08), rgba(240,199,106,.08)),
+        rgba(8, 11, 15, 0.76);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 30px 90px rgba(0, 0, 0, 0.32);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      text-align: left;
+    }
+    .visual-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid rgba(112, 226, 255, 0.16);
+      color: #e7fbff;
+      font-size: 0.84rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .artifact-chain {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0.75rem;
+      padding: 1rem;
+    }
+    .chain-node {
+      min-height: 112px;
+      padding: 0.95rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.045);
+    }
+    .chain-node b {
+      display: block;
+      color: var(--cyan);
+      margin-bottom: 0.4rem;
+    }
+    .chain-node span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    section {
+      padding: 6rem 1.5rem;
+      border-bottom: 1px solid rgba(112, 226, 255, 0.12);
+    }
+    .wrap {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+    }
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 2rem;
+    }
+    .section-head h2 {
+      margin: 0 0 0.8rem;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.02;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      border: 1px solid rgba(112, 226, 255, 0.16);
+      border-radius: 8px;
+      background: rgba(16, 20, 27, 0.76);
+      padding: 1.25rem;
+      min-height: 184px;
+    }
+    .card h3 {
+      margin: 0 0 0.55rem;
+      color: #f7ead0;
+      font-size: 1.16rem;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+    .tool-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .tool {
+      border: 1px solid rgba(240, 199, 106, 0.2);
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(240,199,106,.08), rgba(112,226,255,.06));
+      padding: 1.1rem;
+    }
+    .tool code {
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 1rem;
+    }
+    .tool p {
+      color: var(--muted);
+      margin: 0.6rem 0 0;
+    }
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .price {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.045);
+      padding: 1.15rem;
+    }
+    .price b {
+      display: block;
+      color: var(--cyan);
+      margin-bottom: 0.25rem;
+      font-size: 1.4rem;
+    }
+    .negative {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+    .negative span {
+      border: 1px solid rgba(255, 94, 137, 0.28);
+      color: #ffd7df;
+      border-radius: 999px;
+      background: rgba(255, 94, 137, 0.08);
+      padding: 0.55rem 0.8rem;
+      font-weight: 700;
+    }
+    footer {
+      padding: 2.5rem 1.5rem;
+      color: var(--muted);
+      text-align: center;
+      background: #050608;
+    }
+    @media (max-width: 900px) {
+      .artifact-chain, .cards, .tool-list, .price-grid { grid-template-columns: 1fr; }
+      .hero { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <canvas id="particles"></canvas>
+    <div class="hero-inner">
+      <div class="mark" aria-hidden="true">
+        <svg viewBox="0 0 120 120" role="img">
+          <title>StrategiX Visual MCP mark</title>
+          <desc>Layered geometric mark representing contract, render, receipt, and searchable artifact.</desc>
+          <circle cx="60" cy="60" r="46" fill="none" stroke="rgba(112,226,255,.62)" stroke-width="2"/>
+          <path d="M34 36h32l20 20v28H34z" fill="none" stroke="#f0c76a" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M66 36v20h20" fill="none" stroke="#70e2ff" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M42 70h36M42 82h24" stroke="#ff5e89" stroke-width="4" stroke-linecap="round"/>
+          <path d="M25 96l70-70" stroke="rgba(157,124,255,.75)" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="eyebrow">Public-discoverable MCP | API-key gated beta</div>
+      <h1><span>StrategiX</span><span>Visual MCP</span></h1>
+      <p class="tagline">
+        Reproducible visual infrastructure for agents.
+        <span>Turn contracts, reasoning, and source material into deterministic, auditable visual artifacts with fit reports, receipts, provenance, and searchable metadata.</span>
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#usage">Use the MCP</a>
+        <a class="btn btn-secondary" href="#tools">View Tools</a>
+      </div>
+      <div class="meter">Endpoint: <code>https://api.aitrailblazer.net/mcp</code> | Prefix: <code>strategix_</code></div>
+
+      <div class="artifact-visual" aria-label="StrategiX artifact chain">
+        <div class="visual-head">
+          <span>Artifact Chain</span>
+          <span>contract-first visual infrastructure</span>
+        </div>
+        <div class="artifact-chain">
+          <div class="chain-node"><b>Contract</b><span>Canonical nodes, edges, labels, owners, source refs, accessibility, viewport policy.</span></div>
+          <div class="chain-node"><b>Render</b><span>Deterministic visual output with stable renderer and version metadata.</span></div>
+          <div class="chain-node"><b>Fit Report</b><span>Measured viewBox, aspect ratio, thresholds, warnings, and retry count.</span></div>
+          <div class="chain-node"><b>Receipt</b><span>Input hash, contract hash, output hash, tool, renderer, timestamp, payment reference.</span></div>
+          <div class="chain-node"><b>Search</b><span>Compact metadata for future agents, project memory, and artifact retrieval.</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Not a diagram generator.</h2>
+        <p>StrategiX Visual MCP is a contract-first visual infrastructure layer for agent workflows.</p>
+      </div>
+      <div class="negative">
+        <span>Not a canvas editor</span>
+        <span>Not a Mermaid clone</span>
+        <span>Not merely a renderer backend</span>
+        <span>Not only a schema project</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What it produces</h2>
+        <p>Visual artifacts that carry enough structure for agents, audits, retries, search, and reuse.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><h3>Semantic visual artifacts</h3><p>Diagrams, architecture maps, payment flows, trust boundaries, ERDs, sequence flows, dashboards, scorecards, charts, reports, and self-contained HTML artifacts.</p></article>
+        <article class="card"><h3>Audit-ready metadata</h3><p>Contracts, receipts, fit reports, source digests, renderer hashes, provenance, and compact searchable metadata.</p></article>
+        <article class="card"><h3>Agent-native outputs</h3><p>The MCP surface is designed for agents that need reusable visual outputs, not manual shape editing.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="tools">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>MCP tools</h2>
+        <p>Public discovery is enabled through <code>tools/list</code>. Tool calls are API-key gated during beta.</p>
+      </div>
+      <div class="tool-list">
+        <article class="tool"><code>strategix_diagram_validate</code><p>Validate canonical visual contracts before rendering.</p></article>
+        <article class="tool"><code>strategix_diagram_render</code><p>Render validated contracts into deterministic accessible SVG with fit reports and receipt metadata.</p></article>
+        <article class="tool"><code>strategix_visual_spec_package</code><p>Package contract, SVG, source digest, fit report, receipt, and metadata into self-contained HTML.</p></article>
+        <article class="tool"><code>strategix_visual_spec_search</code><p>Search compact visual artifact metadata; full HTML/SVG/XML remain drilldown artifacts.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="usage">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Access model</h2>
+        <p>StrategiX Visual MCP is public-discoverable and API-key gated while fixture tests, receipt checks, and pricing benchmarks are completed.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><h3>Discovery</h3><p><code>tools/list</code>, metadata, and schema inspection are public so directories and agents can understand the service.</p></article>
+        <article class="card"><h3>Execution</h3><p><code>strategix_</code> <code>tools/call</code> requires an authorized first-party API key during beta.</p></article>
+        <article class="card"><h3>Endpoint</h3><p><code>https://api.aitrailblazer.net/mcp</code> is the shared AITrailblazer MCP endpoint.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Pricing preview</h2>
+        <p>Initial x402 tiers are designed for predictable agent budgeting. Public paid execution follows the beta gate.</p>
+      </div>
+      <div class="price-grid">
+        <article class="price"><b>$0.000</b><span>Preview and discovery</span></article>
+        <article class="price"><b>$0.005</b><span>Simple validation or compact search</span></article>
+        <article class="price"><b>$0.02</b><span>Standard bounded artifact render/package</span></article>
+        <article class="price"><b>$0.08-$0.15</b><span>Quoted heavy jobs</span></article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>A product of AITrailblazer. Related product family: <a href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/">DeltaSignal ATLAS-7</a>.</p>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resize() {
+      canvas.width = canvas.offsetWidth * devicePixelRatio;
+      canvas.height = canvas.offsetHeight * devicePixelRatio;
+      ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+      const count = Math.min(110, Math.max(54, Math.floor(canvas.offsetWidth / 11)));
+      particles = Array.from({ length: count }, () => ({
+        x: Math.random() * canvas.offsetWidth,
+        y: Math.random() * canvas.offsetHeight,
+        vx: (Math.random() - 0.5) * 0.22,
+        vy: (Math.random() - 0.5) * 0.22,
+        r: 1 + Math.random() * 2.4
+      }));
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+      for (const p of particles) {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > canvas.offsetWidth) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.offsetHeight) p.vy *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(112, 226, 255, 0.58)';
+        ctx.fill();
+      }
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const a = particles[i], b = particles[j];
+          const dx = a.x - b.x, dy = a.y - b.y;
+          const d = Math.hypot(dx, dy);
+          if (d < 96) {
+            ctx.globalAlpha = (1 - d / 96) * 0.26;
+            ctx.strokeStyle = '#f0c76a';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+            ctx.globalAlpha = 1;
+          }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+
+    resize();
+    draw();
+    addEventListener('resize', resize);
+  </script>
+</body>
+</html>
