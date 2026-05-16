@@ -68,9 +68,21 @@ DeltaSignal Intelligence Deliverables:
 - strategix_delta_brief_pdf_full: $4.50
 - Single Daily Morning Brief PDF: $4.50, target gross margin ~68-72%, one ready-to-use PDF per market day.
 - Monthly Subscription: $79, target gross margin ~71%, 22 daily briefs with auto-delivery and archive access.
+- Professional Issuer Drilldown PDF: $18, deeper evidence pack for one issuer identified by the daily brief.
 - Heavy / Multi-Issuer Deep Brief: $9.00, target gross margin ~62%, includes extra issuer drilldowns.
 - These finished artifacts use DeltaSignal ATLAS-7 evidence plus StrategiX rendering, fit report, receipt, provenance, and searchable artifact metadata.
 - DeltaSignal ATLAS-7 source page: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/
+
+Competitive positioning guidance:
+
+- Use a launch-safe workflow comparison rather than absolute competitor claims.
+- On-chain market intelligence products such as Glassnode and CryptoQuant are strong in digital-asset, exchange, derivatives, and on-chain metrics; DeltaSignal + StrategiX emphasizes SEC/XBRL issuer evidence, deltas, and investor-ready PDF artifacts.
+- Wallet/entity intelligence products such as Nansen are strong in wallet labels and on-chain behavior; DeltaSignal + StrategiX emphasizes crypto-exposed public-company filing evidence.
+- Query/dashboard products such as Dune are strong in SQL dashboards and blockchain data APIs; DeltaSignal + StrategiX emphasizes done-for-you briefs with receipt/provenance metadata.
+- Protocol-fundamentals products such as Token Terminal are strong in standardized protocol and tokenized-asset metrics; DeltaSignal + StrategiX emphasizes public-company issuer fundamentals and delta tracking.
+- Research platforms such as Messari are strong in market research and crypto intelligence; DeltaSignal + StrategiX emphasizes deterministic artifact delivery and evidence receipts.
+- Broad equity research and terminals such as Schwab/CFRA, Bloomberg, and FactSet are broad and powerful; DeltaSignal + StrategiX emphasizes crypto-issuer-native daily operating pictures with consumer-accessible pricing.
+- Do not claim competitors have no provenance, no audit trails, or no issuer data unless the current external evidence has been verified.
 
 Access boundary:
 

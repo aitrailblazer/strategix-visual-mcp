@@ -90,6 +90,7 @@ StrategiX Visual MCP can package DeltaSignal ATLAS-7 evidence into polished, bra
 | --- | ---: | ---: | --- |
 | Single Daily Morning Brief PDF | `$4.50` | `~68-72%` | One ready-to-use PDF per market day |
 | Monthly Subscription | `$79` | `~71%` | 22 daily briefs, auto-delivered with archive access |
+| Professional Issuer Drilldown PDF | `$18` | TBD | Deeper evidence pack for one issuer identified by the daily brief |
 | Heavy / Multi-Issuer Deep Brief | `$9.00` | `~62%` | Includes extra issuer drilldowns |
 
 Recommended bundled workflow:
@@ -99,6 +100,20 @@ strategix_delta_brief_pdf_full -> $4.50
 ```
 
 Source intelligence: `https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/`
+
+## Competitive Positioning
+
+DeltaSignal plus StrategiX is positioned around daily, weekly, and monthly investor-ready operating pictures for crypto-exposed public companies. This is a workflow comparison, not a claim that every competitor lacks every feature in every tier.
+
+| Category | Representative products | Typical strength | DeltaSignal + StrategiX wedge |
+| --- | --- | --- | --- |
+| On-chain market intelligence | Glassnode, CryptoQuant | Digital-asset, exchange, derivatives, and on-chain metrics for market structure. | SEC/XBRL public-company evidence, explicit deltas, branded PDF artifact, receipt, and evidence hash. |
+| Wallet and entity intelligence | Nansen | Wallet labeling, on-chain entity behavior, smart-money monitoring, and crypto flows. | Crypto-exposed public issuers, filing-backed fundamentals, risk pressure, and compliance-friendly artifact delivery. |
+| On-chain query dashboards | Dune | SQL dashboards, APIs, and shareable views across blockchain datasets. | Daily investor PDF with contract, fit report, receipt, provenance, and searchable metadata. |
+| Protocol fundamentals | Token Terminal | Standardized business-style metrics for chains, protocols, applications, and tokenized assets. | SEC/XBRL company facts and public-company delta tracking rather than only protocol economics. |
+| Crypto research platforms | Messari and research/newsletter products | Market research, reports, prices, token unlocks, and narrative intelligence. | Evidence envelope to PDF with embedded metadata, receipt, and repeatable cadence. |
+| Broad equity research | Schwab/CFRA-style reports | General equity analysis, rankings, opinions, financial statistics, and broad company coverage. | Crypto-issuer-native ATLAS-7 coverage, treasury exposure, covenant stress, peer ranking, alpha screen, and daily changes. |
+| Enterprise terminals and datasets | Bloomberg Terminal, FactSet | Professional multi-asset data, analytics, workflow, news, reporting, and enterprise integrations. | Consumer-accessible daily PDF, issuer drilldown, and monthly subscription with x402-facing metadata. |
 
 ## Public Reference URLs
 

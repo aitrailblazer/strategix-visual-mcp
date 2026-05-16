@@ -141,6 +141,12 @@
       "notes": "22 daily briefs with auto-delivery and archive access."
     },
     {
+      "name": "strategix_delta_issuer_drilldown_pdf",
+      "label": "Professional Issuer Drilldown PDF",
+      "priceUsd": 18.00,
+      "notes": "Deeper evidence pack for one issuer identified by the daily brief."
+    },
+    {
       "name": "strategix_delta_deep_brief_pdf",
       "label": "Heavy / Multi-Issuer Deep Brief",
       "priceUsd": 9.00,
@@ -155,6 +161,19 @@
       "relationship": "Source SEC/XBRL issuer intelligence for DeltaSignal PDF deliverables."
     }
   ],
+  "competitivePositioning": {
+    "boundary": "Workflow comparison, not an absolute claim that every competitor lacks every feature in every tier.",
+    "wedge": "Daily, weekly, and monthly investor-ready operating pictures for crypto-exposed public companies using SEC/XBRL evidence, explicit deltas, deterministic artifacts, receipts, provenance, and consumer-accessible pricing.",
+    "representativeCategories": [
+      "on-chain market intelligence",
+      "wallet and entity intelligence",
+      "on-chain query dashboards",
+      "protocol fundamentals",
+      "crypto research platforms",
+      "broad equity research",
+      "enterprise terminals and datasets"
+    ]
+  },
   "accessBoundary": {
     "discovery": "public",
     "execution": "api-key-gated-beta",

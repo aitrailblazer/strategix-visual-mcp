@@ -337,6 +337,36 @@
       padding: 0.55rem 0.8rem;
       font-weight: 700;
     }
+    .matrix {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid rgba(112, 226, 255, 0.18);
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(16, 20, 27, 0.62);
+    }
+    .matrix th,
+    .matrix td {
+      padding: 0.95rem;
+      border-bottom: 1px solid rgba(112, 226, 255, 0.12);
+      vertical-align: top;
+      text-align: left;
+    }
+    .matrix th {
+      color: #071015;
+      background: linear-gradient(90deg, var(--cyan), var(--gold));
+      font-weight: 800;
+    }
+    .matrix td {
+      color: var(--muted);
+    }
+    .matrix td:first-child {
+      color: var(--ink);
+      font-weight: 800;
+    }
+    .matrix strong {
+      color: #f7ead0;
+    }
     footer {
       padding: 2.5rem 1.5rem;
       color: var(--muted);
@@ -489,10 +519,74 @@
       <div class="price-grid">
         <article class="price"><b>$4.50</b><span>Single Daily Morning Brief PDF. One ready-to-use PDF per market day. Workflow: <code>strategix_delta_brief_pdf_full</code>. Target gross margin: ~68-72%.</span></article>
         <article class="price"><b>$79</b><span>Monthly subscription. 22 daily briefs with auto-delivery and archive access. Target gross margin: ~71%.</span></article>
+        <article class="price"><b>$18</b><span>Professional issuer drilldown PDF. Use when the daily brief identifies one issuer that needs a deeper, compliance-forward evidence pack.</span></article>
         <article class="price"><b>$9.00</b><span>Heavy or multi-issuer deep brief with extra issuer drilldowns. Target gross margin: ~62%.</span></article>
-        <article class="price"><b>Premium</b><span>Finished PDF deliverables use DeltaSignal evidence plus StrategiX rendering, fit report, receipt, provenance, and searchable artifact metadata.</span></article>
       </div>
       <p class="meter" style="margin-top:1rem;">Source intelligence: <a href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/">DeltaSignal ATLAS-7</a>. Finished artifact layer: StrategiX Visual MCP.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Competitive positioning</h2>
+        <p>DeltaSignal plus StrategiX is positioned around daily, weekly, and monthly investor-ready operating pictures for crypto-exposed public companies. This matrix is a launch-safe workflow comparison, not a claim that every competitor lacks every feature in every tier.</p>
+      </div>
+      <table class="matrix" aria-label="DeltaSignal ATLAS-7 competitive positioning matrix">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Representative products</th>
+            <th>Typical strength</th>
+            <th>DeltaSignal + StrategiX wedge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>On-chain market intelligence</td>
+            <td>Glassnode, CryptoQuant</td>
+            <td>Digital-asset, exchange, derivatives, and on-chain metrics for market structure.</td>
+            <td><strong>Issuer operating picture:</strong> SEC/XBRL public-company evidence, explicit deltas, branded PDF artifact, receipt, and evidence hash.</td>
+          </tr>
+          <tr>
+            <td>Wallet and entity intelligence</td>
+            <td>Nansen</td>
+            <td>Wallet labeling, on-chain entity behavior, smart-money monitoring, and real-time crypto flows.</td>
+            <td><strong>Public-company layer:</strong> crypto-exposed issuers, filing-backed fundamentals, risk pressure, and compliance-friendly artifact delivery.</td>
+          </tr>
+          <tr>
+            <td>On-chain query dashboards</td>
+            <td>Dune</td>
+            <td>SQL-based dashboards, APIs, and shareable views across blockchain datasets.</td>
+            <td><strong>Done-for-you brief:</strong> a daily investor PDF with contract, fit report, receipt, provenance, and searchable metadata.</td>
+          </tr>
+          <tr>
+            <td>Protocol fundamentals</td>
+            <td>Token Terminal</td>
+            <td>Standardized business-style metrics for blockchains, protocols, applications, and tokenized assets.</td>
+            <td><strong>Issuer fundamentals:</strong> SEC/XBRL company facts and public-company delta tracking rather than only protocol economics.</td>
+          </tr>
+          <tr>
+            <td>Crypto research platforms</td>
+            <td>Messari and research/newsletter products</td>
+            <td>Market research, reports, prices, token unlocks, and narrative intelligence.</td>
+            <td><strong>Deterministic artifact chain:</strong> evidence envelope to PDF, embedded metadata, receipt, and repeatable daily/weekly/monthly cadence.</td>
+          </tr>
+          <tr>
+            <td>Broad equity research</td>
+            <td>Schwab/CFRA-style reports</td>
+            <td>General equity analysis, rankings, opinions, financial statistics, and broad company coverage.</td>
+            <td><strong>Crypto-issuer native:</strong> 215-issuer ATLAS-7 universe, crypto treasury exposure, covenant stress, peer ranking, alpha screen, and daily changes.</td>
+          </tr>
+          <tr>
+            <td>Enterprise terminals and datasets</td>
+            <td>Bloomberg Terminal, FactSet</td>
+            <td>Professional multi-asset data, analytics, workflow, news, reporting, and enterprise integrations.</td>
+            <td><strong>Consumer-accessible artifact:</strong> $4.50 daily PDF, $18 issuer drilldown, and $79 monthly subscription with x402-facing product metadata.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="meter" style="margin-top:1rem;">Positioning boundary: DeltaSignal provides research inputs and evidence artifacts, not personalized investment advice, buy/sell instructions, allocation guidance, or price targets.</p>
     </div>
   </section>
 
