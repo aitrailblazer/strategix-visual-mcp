@@ -30,7 +30,10 @@
     "scorecards",
     "architecture-maps",
     "html-artifacts",
-    "contract-first"
+    "contract-first",
+    "deltasignal",
+    "morning-brief",
+    "pdf"
   ],
   "transport": "http",
   "http": {
@@ -120,6 +123,36 @@
     {
       "label": "Heavy or large source bundle",
       "priceUsdRange": "$4.00-$6.00"
+    }
+  ],
+  "deltaSignalDeliverables": [
+    {
+      "name": "strategix_delta_brief_pdf_full",
+      "label": "Single Daily Morning Brief PDF",
+      "priceUsd": 4.50,
+      "grossMarginTarget": "~68-72%",
+      "notes": "One ready-to-use PDF per market day using DeltaSignal ATLAS-7 evidence plus StrategiX rendering, fit report, receipt, provenance, and searchable metadata."
+    },
+    {
+      "name": "strategix_delta_brief_pdf_monthly",
+      "label": "Monthly Subscription",
+      "priceUsd": 79.00,
+      "grossMarginTarget": "~71%",
+      "notes": "22 daily briefs with auto-delivery and archive access."
+    },
+    {
+      "name": "strategix_delta_deep_brief_pdf",
+      "label": "Heavy / Multi-Issuer Deep Brief",
+      "priceUsd": 9.00,
+      "grossMarginTarget": "~62%",
+      "notes": "Includes extra issuer drilldowns."
+    }
+  ],
+  "relatedProducts": [
+    {
+      "name": "DeltaSignal ATLAS-7",
+      "url": "https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/",
+      "relationship": "Source SEC/XBRL issuer intelligence for DeltaSignal PDF deliverables."
     }
   ],
   "accessBoundary": {

@@ -82,10 +82,29 @@ Discovery is free. Execution is API-key gated during beta. Public x402 pricing m
 | Dashboard full workflow | `$2.50` |
 | Heavy or large source bundle | `$4.00-$6.00` |
 
+## DeltaSignal Intelligence Deliverables
+
+StrategiX Visual MCP can package DeltaSignal ATLAS-7 evidence into polished, branded, auditable investor documents. These finished artifacts are priced separately from the underlying DeltaSignal data calls.
+
+| Product | Public price | Gross margin target | Notes |
+| --- | ---: | ---: | --- |
+| Single Daily Morning Brief PDF | `$4.50` | `~68-72%` | One ready-to-use PDF per market day |
+| Monthly Subscription | `$79` | `~71%` | 22 daily briefs, auto-delivered with archive access |
+| Heavy / Multi-Issuer Deep Brief | `$9.00` | `~62%` | Includes extra issuer drilldowns |
+
+Recommended bundled workflow:
+
+```text
+strategix_delta_brief_pdf_full -> $4.50
+```
+
+Source intelligence: `https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/`
+
 ## Public Reference URLs
 
 - Landing page: `https://aitrailblazer.github.io/strategix-visual-mcp/`
 - AITrailblazer MCP umbrella: `https://aitrailblazer.github.io/aitrailblazer-mcp/`
+- DeltaSignal ATLAS-7: `https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/`
 - MCP endpoint: `https://api.aitrailblazer.net/mcp`
 - Pricing metadata: `https://api.aitrailblazer.net/mcp/pricing`
 - Health metadata: `https://api.aitrailblazer.net/mcp/health`

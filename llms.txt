@@ -63,6 +63,15 @@ Approved public price schedule:
 - Dashboard full workflow: $2.50
 - Heavy or large source bundle: $4.00-$6.00
 
+DeltaSignal Intelligence Deliverables:
+
+- strategix_delta_brief_pdf_full: $4.50
+- Single Daily Morning Brief PDF: $4.50, target gross margin ~68-72%, one ready-to-use PDF per market day.
+- Monthly Subscription: $79, target gross margin ~71%, 22 daily briefs with auto-delivery and archive access.
+- Heavy / Multi-Issuer Deep Brief: $9.00, target gross margin ~62%, includes extra issuer drilldowns.
+- These finished artifacts use DeltaSignal ATLAS-7 evidence plus StrategiX rendering, fit report, receipt, provenance, and searchable artifact metadata.
+- DeltaSignal ATLAS-7 source page: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/
+
 Access boundary:
 
 - Public discovery is enabled.
