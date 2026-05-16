@@ -4,6 +4,11 @@
   "title": "StrategiX Visual MCP",
   "description": "Contract-first visual infrastructure for agents that produces deterministic, auditable visual artifacts with fit reports, receipts, provenance, and searchable metadata.",
   "websiteUrl": "https://aitrailblazer.github.io/strategix-visual-mcp/",
+  "publisher": "AITrailblazer",
+  "companyUrl": "https://aitrailblazer.com",
+  "umbrellaUrl": "https://aitrailblazer.github.io/aitrailblazer-mcp/",
+  "pricingUrl": "https://api.aitrailblazer.net/mcp/pricing",
+  "healthUrl": "https://api.aitrailblazer.net/mcp/health",
   "repository": {
     "type": "git",
     "url": "https://github.com/aitrailblazer/strategix-visual-mcp"
@@ -34,5 +39,92 @@
     "authHeader": "x-api-key"
   },
   "toolPrefix": "strategix_",
-  "launchState": "public-discoverable-api-key-gated-beta"
+  "launchState": "public-discoverable-api-key-gated-beta",
+  "artifactChain": [
+    "contract",
+    "render",
+    "fit_report",
+    "receipt",
+    "searchable_artifact"
+  ],
+  "canonicalTools": [
+    {
+      "name": "strategix_visual_contract_create",
+      "purpose": "Create a normalized visual contract from source material, reasoning, or an artifact request.",
+      "priceUsd": 0.25,
+      "status": "canonical"
+    },
+    {
+      "name": "strategix_visual_contract_validate",
+      "purpose": "Validate canonical visual contracts before rendering.",
+      "priceUsd": 0.10,
+      "betaAlias": "strategix_diagram_validate"
+    },
+    {
+      "name": "strategix_contract_repair",
+      "purpose": "Repair a contract that fails validation while preserving the original source intent and artifact class.",
+      "priceUsd": 0.15,
+      "status": "planned"
+    },
+    {
+      "name": "strategix_render_artifact",
+      "purpose": "Render validated contracts into deterministic visual artifacts with fit reports and receipt metadata.",
+      "priceUsd": 0.60,
+      "betaAlias": "strategix_diagram_render"
+    },
+    {
+      "name": "strategix_render_html_artifact",
+      "purpose": "Package contract, rendered artifact, source digest, fit report, receipt, and metadata into self-contained HTML.",
+      "priceUsd": 0.85,
+      "betaAlias": "strategix_visual_spec_package"
+    },
+    {
+      "name": "strategix_fit_report",
+      "purpose": "Check artifact fit against the source contract, visual class, viewport, and accessibility constraints.",
+      "priceUsd": 0.30
+    },
+    {
+      "name": "strategix_visual_audit",
+      "purpose": "Inspect a visual artifact for contract drift, missing provenance, layout risk, and publish readiness.",
+      "priceUsd": 0.45
+    },
+    {
+      "name": "strategix_receipt_create",
+      "purpose": "Create auditable receipt metadata with input, contract, output, route, renderer, and timestamp hashes.",
+      "priceUsdRange": "$0.03-$0.08"
+    },
+    {
+      "name": "strategix_artifact_search",
+      "purpose": "Search compact visual artifact metadata.",
+      "priceUsdRange": "$0.03-$0.08",
+      "betaAlias": "strategix_visual_spec_search"
+    }
+  ],
+  "pricing": [
+    {
+      "label": "Discovery, metadata, pricing, health, tool listing",
+      "priceUsd": 0.00
+    },
+    {
+      "label": "Full visual artifact workflow",
+      "priceUsd": 1.25
+    },
+    {
+      "label": "Full visual report workflow",
+      "priceUsd": 1.75
+    },
+    {
+      "label": "Dashboard full workflow",
+      "priceUsd": 2.50
+    },
+    {
+      "label": "Heavy or large source bundle",
+      "priceUsdRange": "$4.00-$6.00"
+    }
+  ],
+  "accessBoundary": {
+    "discovery": "public",
+    "execution": "api-key-gated-beta",
+    "x402": "pricing metadata may be published for planning; public paid execution must be verified from current service metadata"
+  }
 }

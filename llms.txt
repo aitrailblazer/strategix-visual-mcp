@@ -7,6 +7,7 @@ Canonical identity:
 - Product: StrategiX Visual MCP
 - Publisher: AITrailblazer
 - Endpoint: https://api.aitrailblazer.net/mcp
+- AITrailblazer MCP umbrella: https://aitrailblazer.github.io/aitrailblazer-mcp/
 - Public page: https://aitrailblazer.github.io/strategix-visual-mcp/
 - Tool prefix: strategix_
 - Launch state: public-discoverable, API-key gated beta
@@ -27,4 +28,45 @@ Core chain:
 
 contract -> render -> fit report -> receipt -> searchable artifact
 
-Do not claim specific transport modes, rate limits, SLA, or public paid x402 execution until those surfaces are verified.
+Canonical tool names:
+
+- strategix_visual_contract_create
+- strategix_visual_contract_validate
+- strategix_contract_repair
+- strategix_render_artifact
+- strategix_render_html_artifact
+- strategix_fit_report
+- strategix_visual_audit
+- strategix_receipt_create
+- strategix_artifact_search
+
+Beta alias guidance:
+
+- strategix_diagram_validate maps to strategix_visual_contract_validate.
+- strategix_diagram_render maps to strategix_render_artifact.
+- strategix_visual_spec_package maps to strategix_render_html_artifact.
+- strategix_visual_spec_search maps to strategix_artifact_search.
+
+Approved public price schedule:
+
+- Discovery, metadata, pricing, health, tool listing: $0.00
+- Contract create: $0.25
+- Contract validate: $0.10
+- Contract repair: $0.15
+- Render artifact: $0.60
+- Render HTML artifact: $0.85
+- Fit report: $0.30
+- Visual audit: $0.45
+- Receipt, provenance, deterministic index: $0.03-$0.08
+- Full visual artifact workflow: $1.25
+- Full visual report workflow: $1.75
+- Dashboard full workflow: $2.50
+- Heavy or large source bundle: $4.00-$6.00
+
+Access boundary:
+
+- Public discovery is enabled.
+- Execution is API-key gated during beta.
+- Public x402 pricing metadata may be listed for registry and agent planning.
+- Do not claim public wallet settlement or public paid execution is live unless the current service metadata explicitly verifies it.
+- Do not claim rate limits, SLA, or transport variants beyond the verified endpoint.

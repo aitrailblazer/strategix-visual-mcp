@@ -9,6 +9,7 @@ StrategiX Visual MCP turns contracts, reasoning, and source material into determ
 - Publisher: AITrailblazer
 - Repository: `aitrailblazer/strategix-visual-mcp`
 - Public page: `https://aitrailblazer.github.io/strategix-visual-mcp/`
+- AITrailblazer MCP umbrella: `https://aitrailblazer.github.io/aitrailblazer-mcp/`
 - MCP endpoint: `https://api.aitrailblazer.net/mcp`
 - Tool prefix: `strategix_`
 - Launch state: public-discoverable, API-key gated beta
@@ -43,3 +44,48 @@ contract -> render -> fit report -> receipt -> searchable artifact
 
 `tools/list` is public for discovery. `strategix_` `tools/call` requires an authorized first-party API key during beta.
 
+Public discovery, health, capabilities, and pricing metadata are available so registries and agents can inspect the product before execution access is approved.
+
+## Canonical Tool Surface
+
+Canonical product names use the `strategix_` family. Some beta endpoint aliases may remain visible during migration.
+
+| Canonical tool | Purpose | Beta alias / note |
+| --- | --- | --- |
+| `strategix_visual_contract_create` | Create a normalized visual contract from source material, reasoning, or an artifact request. | Planned canonical create surface |
+| `strategix_visual_contract_validate` | Validate canonical visual contracts before rendering. | `strategix_diagram_validate` |
+| `strategix_contract_repair` | Repair a contract that fails validation while preserving the original source intent and artifact class. | Planned repair surface |
+| `strategix_render_artifact` | Render validated contracts into deterministic visual artifacts with fit reports and receipt metadata. | `strategix_diagram_render` |
+| `strategix_render_html_artifact` | Package contract, rendered artifact, source digest, fit report, receipt, and metadata into self-contained HTML. | `strategix_visual_spec_package` |
+| `strategix_fit_report` | Check artifact fit against the source contract, visual class, viewport, and accessibility constraints. | Included in render/package outputs |
+| `strategix_visual_audit` | Inspect a visual artifact for contract drift, missing provenance, layout risk, and publish readiness. | Planned audit surface |
+| `strategix_receipt_create` | Create auditable receipt metadata with input, contract, output, route, renderer, and timestamp hashes. | Included in render/package outputs |
+| `strategix_artifact_search` | Search compact visual artifact metadata. | `strategix_visual_spec_search` |
+
+## Approved Pricing
+
+Discovery is free. Execution is API-key gated during beta. Public x402 pricing metadata is published so registries and agents can understand the commercial surface before public paid execution is enabled.
+
+| Route / workflow | Public price |
+| --- | ---: |
+| Discovery, metadata, pricing, health, tool listing | `$0.00` |
+| Contract create | `$0.25` |
+| Contract validate | `$0.10` |
+| Contract repair | `$0.15` |
+| Render artifact | `$0.60` |
+| Render HTML artifact | `$0.85` |
+| Fit report | `$0.30` |
+| Visual audit | `$0.45` |
+| Receipt, provenance, deterministic index | `$0.03-$0.08` |
+| Full visual artifact workflow | `$1.25` |
+| Full visual report workflow | `$1.75` |
+| Dashboard full workflow | `$2.50` |
+| Heavy or large source bundle | `$4.00-$6.00` |
+
+## Public Reference URLs
+
+- Landing page: `https://aitrailblazer.github.io/strategix-visual-mcp/`
+- AITrailblazer MCP umbrella: `https://aitrailblazer.github.io/aitrailblazer-mcp/`
+- MCP endpoint: `https://api.aitrailblazer.net/mcp`
+- Pricing metadata: `https://api.aitrailblazer.net/mcp/pricing`
+- Health metadata: `https://api.aitrailblazer.net/mcp/health`

@@ -373,8 +373,9 @@
       <div class="hero-actions">
         <a class="btn btn-primary" href="#usage">Use the MCP</a>
         <a class="btn btn-secondary" href="#tools">View Tools</a>
+        <a class="btn btn-secondary" href="https://aitrailblazer.github.io/aitrailblazer-mcp/">AITrailblazer MCP</a>
       </div>
-      <div class="meter">Endpoint: <code>https://api.aitrailblazer.net/mcp</code> | Prefix: <code>strategix_</code></div>
+      <div class="meter">Company: AITrailblazer | Endpoint: <code>https://api.aitrailblazer.net/mcp</code> | Prefix: <code>strategix_</code></div>
 
       <div class="artifact-visual" aria-label="StrategiX artifact chain">
         <div class="visual-head">
@@ -425,13 +426,18 @@
     <div class="wrap">
       <div class="section-head">
         <h2>MCP tools</h2>
-        <p>Public discovery is enabled through <code>tools/list</code>. Tool calls are API-key gated during beta.</p>
+        <p>Canonical product names use the <code>strategix_</code> family. Public discovery is enabled through <code>tools/list</code>; execution is API-key gated during beta.</p>
       </div>
       <div class="tool-list">
-        <article class="tool"><code>strategix_diagram_validate</code><p>Validate canonical visual contracts before rendering.</p></article>
-        <article class="tool"><code>strategix_diagram_render</code><p>Render validated contracts into deterministic accessible SVG with fit reports and receipt metadata.</p></article>
-        <article class="tool"><code>strategix_visual_spec_package</code><p>Package contract, SVG, source digest, fit report, receipt, and metadata into self-contained HTML.</p></article>
-        <article class="tool"><code>strategix_visual_spec_search</code><p>Search compact visual artifact metadata; full HTML/SVG/XML remain drilldown artifacts.</p></article>
+        <article class="tool"><code>strategix_visual_contract_create</code><p>Create a normalized visual contract from source material, reasoning, or a requested artifact shape.</p></article>
+        <article class="tool"><code>strategix_visual_contract_validate</code><p>Validate canonical visual contracts before rendering. Beta alias: <code>strategix_diagram_validate</code>.</p></article>
+        <article class="tool"><code>strategix_contract_repair</code><p>Repair a contract that fails validation while preserving the original source intent and artifact class.</p></article>
+        <article class="tool"><code>strategix_render_artifact</code><p>Render validated contracts into deterministic visual artifacts with fit reports and receipt metadata. Beta alias: <code>strategix_diagram_render</code>.</p></article>
+        <article class="tool"><code>strategix_render_html_artifact</code><p>Package contract, rendered artifact, source digest, fit report, receipt, and metadata into self-contained HTML. Beta package path: <code>strategix_visual_spec_package</code>.</p></article>
+        <article class="tool"><code>strategix_fit_report</code><p>Check whether the generated artifact matches the source contract, intended class, viewport, and accessibility constraints.</p></article>
+        <article class="tool"><code>strategix_visual_audit</code><p>Inspect a visual artifact for contract drift, missing provenance, layout risk, and publish readiness.</p></article>
+        <article class="tool"><code>strategix_receipt_create</code><p>Create auditable receipt metadata with input, contract, output, route, renderer, and timestamp hashes.</p></article>
+        <article class="tool"><code>strategix_artifact_search</code><p>Search compact visual artifact metadata. Beta alias: <code>strategix_visual_spec_search</code>.</p></article>
       </div>
     </div>
   </section>
@@ -445,7 +451,7 @@
       <div class="cards">
         <article class="card"><h3>Discovery</h3><p><code>tools/list</code>, metadata, and schema inspection are public so directories and agents can understand the service.</p></article>
         <article class="card"><h3>Execution</h3><p><code>strategix_</code> <code>tools/call</code> requires an authorized first-party API key during beta.</p></article>
-        <article class="card"><h3>Endpoint</h3><p><code>https://api.aitrailblazer.net/mcp</code> is the shared AITrailblazer MCP endpoint.</p></article>
+        <article class="card"><h3>Endpoint</h3><p><code>https://api.aitrailblazer.net/mcp</code> is the shared AITrailblazer MCP endpoint. See the <a href="https://aitrailblazer.github.io/aitrailblazer-mcp/">AITrailblazer MCP umbrella</a>.</p></article>
       </div>
     </div>
   </section>
@@ -453,20 +459,29 @@
   <section>
     <div class="wrap">
       <div class="section-head">
-        <h2>Pricing preview</h2>
-        <p>Initial x402 tiers are designed for predictable agent budgeting. Public paid execution follows the beta gate.</p>
+        <h2>Approved pricing</h2>
+        <p>Discovery is free. Execution is API-key gated during beta. Public x402 pricing metadata is published so registries and agents can understand the commercial surface before public paid execution is enabled.</p>
       </div>
       <div class="price-grid">
-        <article class="price"><b>$0.000</b><span>Preview and discovery</span></article>
-        <article class="price"><b>$0.005</b><span>Simple validation or compact search</span></article>
-        <article class="price"><b>$0.02</b><span>Standard bounded artifact render/package</span></article>
-        <article class="price"><b>$0.08-$0.15</b><span>Quoted heavy jobs</span></article>
+        <article class="price"><b>$0.00</b><span>Discovery, metadata, pricing, health, and tool listing</span></article>
+        <article class="price"><b>$0.25</b><span>Contract create</span></article>
+        <article class="price"><b>$0.10</b><span>Contract validate</span></article>
+        <article class="price"><b>$0.15</b><span>Contract repair</span></article>
+        <article class="price"><b>$0.60</b><span>Render artifact</span></article>
+        <article class="price"><b>$0.85</b><span>Render HTML artifact</span></article>
+        <article class="price"><b>$0.30</b><span>Fit report</span></article>
+        <article class="price"><b>$0.45</b><span>Visual audit</span></article>
+        <article class="price"><b>$0.03-$0.08</b><span>Receipt, provenance, deterministic index</span></article>
+        <article class="price"><b>$1.25</b><span>Full visual artifact workflow</span></article>
+        <article class="price"><b>$1.75</b><span>Full visual report workflow</span></article>
+        <article class="price"><b>$2.50</b><span>Dashboard full workflow</span></article>
+        <article class="price"><b>$4.00-$6.00</b><span>Heavy or large source bundle</span></article>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>A product of AITrailblazer. Related product family: <a href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/">DeltaSignal ATLAS-7</a>.</p>
+    <p>Company: AITrailblazer. MCP umbrella: <a href="https://aitrailblazer.github.io/aitrailblazer-mcp/">AITrailblazer MCP</a>. Related product family: <a href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/">DeltaSignal ATLAS-7</a>.</p>
   </footer>
 
   <script>
